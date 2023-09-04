@@ -1,10 +1,11 @@
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams} from "react-router-dom";
 import logo from "../images/fox.png"
 import { useState, useEffect } from "react";
 import { ContactService } from "../services/ContactService";
 import Spinner from "./Spinner";
 
 export default function ViewContacts() {
+
 
     const { contactId } = useParams()
 

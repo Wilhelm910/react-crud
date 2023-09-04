@@ -1,9 +1,77 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import logo from "../images/fox.png"
+import { useEffect, useState } from "react";
+import { ContactService } from "../services/ContactService";
 
 export default function EditContacts() {
+
+    let params = useParams()
+
+
+    const [state, setState] = useState({
+        contact: {
+            name: "",
+            email: "",
+            mobile: "",
+            title: "",
+            company: "",
+            image: "",
+            groupId: ""
+        },
+        loading: false,
+        errorMessage: "",
+        groups: []
+    })
+
+    useEffect(() => {
+        async function fetchData() {
+            setState({
+                ...state,
+                loading: true
+            })
+            try {
+                let response = await ContactService.getContactById(params.contactId)
+                let groupResponse = await ContactService.getGroups()
+                setState({
+                    ...state,
+                    loading: false,
+                    contact: response.data,
+                    groups: groupResponse.data
+                })
+            }
+            catch (error) {
+                setState({
+                    ...state,
+                    loading: false,
+                    errorMessage: error.errorMessage
+                })
+            }
+        }
+        fetchData()
+    }, [params.contactId])
+
+    let { loading, contact, errorMessage, groups } = state
+
+    let renderGroups = groups.length > 0 ? groups.map((item) => {
+            return (
+                <option key={item.id} value={item.id}>{item.name}</option>
+            )
+    }) : null
+
+    function updateContact(event) {
+        setState({
+            ...state,
+            contact: {
+                ...state.contact,
+                [event.target.name]: event.target.value
+            }
+        })
+    }
+
+
     return (
         <>
+        <pre>{JSON.stringify(contact)}</pre>
             <section className="add-contact p-3">
                 <div className="container">
                     <div className="row">
@@ -18,6 +86,10 @@ export default function EditContacts() {
                             <form>
                                 <div className="mb-2">
                                     <input
+                                        required={true}
+                                        name="name"
+                                        value={contact.name}
+                                        onChange={updateContact}
                                         type="text"
                                         placeholder="name"
                                         className="form-control"
@@ -32,6 +104,10 @@ export default function EditContacts() {
                                 </div>
                                 <div className="mb-2">
                                     <input
+                                        required={true}
+                                        name="mobile"
+                                        value={contact.mobile}
+                                        onChange={updateContact}
                                         type="number"
                                         placeholder="mobile"
                                         className="form-control"
@@ -39,6 +115,10 @@ export default function EditContacts() {
                                 </div>
                                 <div className="mb-2">
                                     <input
+                                        required={true}
+                                        name="title"
+                                        value={contact.title}
+                                        onChange={updateContact}
                                         type="text"
                                         placeholder="title"
                                         className="form-control"
@@ -46,6 +126,10 @@ export default function EditContacts() {
                                 </div>
                                 <div className="mb-2">
                                     <input
+                                        required={true}
+                                        name="email"
+                                        value={contact.email}
+                                        onChange={updateContact}
                                         type="email"
                                         placeholder="email"
                                         className="form-control"
@@ -53,14 +137,24 @@ export default function EditContacts() {
                                 </div>
                                 <div className="mb-2">
                                     <input
+                                        required={true}
+                                        name="company"
+                                        value={contact.company}
+                                        onChange={updateContact}
                                         type="text"
                                         placeholder="company"
                                         className="form-control"
                                     />
                                 </div>
                                 <div className="mb-2">
-                                    <select className="form-control">
-                                        <option value="">Select a group</option>
+                                    <select className="form-control"
+                                        required={true}
+                                        name="groupId"
+                                        value={contact.groupId}
+                                        onChange={updateContact}
+                                    >
+                                    
+                                        {renderGroups}
                                     </select>
                                 </div>
                                 <div className="mb-2">
@@ -70,7 +164,7 @@ export default function EditContacts() {
                             </form>
                         </div>
                         <div className="col-md-6">
-                            <img className="contact-img" src={logo}/>
+                            <img className="contact-img" src={logo} />
                         </div>
                     </div>
                 </div>

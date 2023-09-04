@@ -1,76 +1,86 @@
 {
-    "contacts": [
-        {
-            "id": 1,
-            "name": "Anna Schmidt",
-            "email": "anna.schmidt@example.com",
-            "mobile": "+1 987 654321",
-            "company": "Musterfirma Inc.",
-            "title": "Senior Software Engineer",
-            "image": "https://example.com/anna-schmidt.jpg",
-            "groupId": "11"
-        },
-        {
-            "id": 2,
-            "name": "John Doe",
-            "email": "john.doe@example.com",
-            "mobile": "+44 745 123456",
-            "company": "SampleCorp Ltd.",
-            "title": "Marketing Manager",
-            "image": "https://example.com/john-doe.jpg",
-            "groupId": "21"
-        },
-        {
-            "id": 3,
-            "name": "Marie Leclerc",
-            "email": "marie.leclerc@example.com",
-            "mobile": "+33 6 78901234",
-            "company": "Exemple Entreprise",
-            "title": "Directrice des Ventes",
-            "image": "https://example.com/marie-leclerc.jpg",
-            "groupId": "31"
-        },
-        {
-            "id": 4,
-            "name": "Raj Patel",
-            "email": "raj.patel@example.com",
-            "mobile": "+91 98765 43210",
-            "company": "DemoTech Solutions",
-            "title": "Product Manager",
-            "image": "https://example.com/raj-patel.jpg",
-            "groupId": "41"
-        },
-        {
-            "id": 5,
-            "name": "Elena Garcia",
-            "email": "elena.garcia@example.com",
-            "mobile": "+34 612 345678",
-            "company": "Ejemplo Empresas",
-            "title": "Gerente de Recursos Humanos",
-            "image": "https://example.com/elena-garcia.jpg",
-            "groupId": "51"
-        }
-    ],
-    "groups": [
-        {
-            "id": 11,
-            "name": "Engineering"
-        },
-        {
-            "id": 21,
-            "name": "Marketing"
-        },
-        {
-            "id": 31,
-            "name": "Ventes"
-        },
-        {
-            "id": 41,
-            "name": "Product Management"
-        },
-        {
-            "id": 51,
-            "name": "Recursos Humanos"
-        }
-    ]
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Anna Schmidt",
+      "email": "anna.schmidt@example.com",
+      "mobile": "+1 987 654321",
+      "company": "Musterfirma Inc.",
+      "title": "Senior Software Engineer",
+      "image": "https://example.com/anna-schmidt.jpg",
+      "groupId": "11"
+    },
+    {
+      "id": 2,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "mobile": "+44 745 123456",
+      "company": "SampleCorp Ltd.",
+      "title": "Marketing Manager",
+      "image": "https://example.com/john-doe.jpg",
+      "groupId": "21"
+    },
+    {
+      "id": 3,
+      "name": "Marie Leclerc",
+      "email": "marie.leclerc@example.com",
+      "mobile": "+33 6 78901234",
+      "company": "Exemple Entreprise",
+      "title": "Directrice des Ventes",
+      "image": "https://example.com/marie-leclerc.jpg",
+      "groupId": "31"
+    },
+    {
+      "id": 4,
+      "name": "Raj Patel",
+      "email": "raj.patel@example.com",
+      "mobile": "+91 98765 43210",
+      "company": "DemoTech Solutions",
+      "title": "Product Manager",
+      "image": "https://example.com/raj-patel.jpg",
+      "groupId": "41"
+    },
+    {
+      "id": 5,
+      "name": "Elena Garcia",
+      "email": "elena.garcia@example.com",
+      "mobile": "+34 612 345678",
+      "company": "Ejemplo Empresas",
+      "title": "Gerente de Recursos Humanos",
+      "image": "https://example.com/elena-garcia.jpg",
+      "groupId": "51"
+    },
+    {
+      "name": "WILHELM TEICKE",
+      "email": "wilhelm.teicke@googlemail.com",
+      "mobile": "015143100626",
+      "company": "qeqwe",
+      "title": "qwerqw",
+      "image": "",
+      "groupId": "21",
+      "id": 6
+    }
+  ],
+  "groups": [
+    {
+      "id": 11,
+      "name": "Engineering"
+    },
+    {
+      "id": 21,
+      "name": "Marketing"
+    },
+    {
+      "id": 31,
+      "name": "Ventes"
+    },
+    {
+      "id": 41,
+      "name": "Product Management"
+    },
+    {
+      "id": 51,
+      "name": "Recursos Humanos"
+    }
+  ]
 }
